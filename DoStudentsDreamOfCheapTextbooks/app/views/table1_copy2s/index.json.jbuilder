@@ -1,0 +1,1 @@
+json.array! @table1_copy2s, partial: 'table1_copy2s/table1_copy2', as: :table1_copy2

@@ -1,0 +1,1 @@
+json.partial! "table1_copy1s/table1_copy1", table1_copy1: @table1_copy1

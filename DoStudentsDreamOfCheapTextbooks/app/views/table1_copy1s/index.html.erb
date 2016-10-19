@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Table1 Copy1s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @table1_copy1s.each do |table1_copy1| %>
+      <tr>
+        <td><%= link_to 'Show', table1_copy1 %></td>
+        <td><%= link_to 'Edit', edit_table1_copy1_path(table1_copy1) %></td>
+        <td><%= link_to 'Destroy', table1_copy1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Table1 Copy1', new_table1_copy1_path %>

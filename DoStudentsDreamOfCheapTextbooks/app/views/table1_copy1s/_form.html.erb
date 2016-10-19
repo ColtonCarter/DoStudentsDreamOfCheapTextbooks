@@ -1,0 +1,17 @@
+<%= form_for(table1_copy1) do |f| %>
+  <% if table1_copy1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(table1_copy1.errors.count, "error") %> prohibited this table1_copy1 from being saved:</h2>
+
+      <ul>
+      <% table1_copy1.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
