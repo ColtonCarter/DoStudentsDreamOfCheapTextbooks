@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :searches
   resources :table1_copy3s
   resources :table1_copy2s
   resources :table1_copy1s
