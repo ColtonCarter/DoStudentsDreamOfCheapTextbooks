@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+    root 'searches#new'
   resources :searches
   resources :table1_copy3s
   resources :table1_copy2s
