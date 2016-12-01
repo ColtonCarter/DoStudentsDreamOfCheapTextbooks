@@ -6,15 +6,164 @@
 </p>
 
 
-<%= link_to 'Back', new_search_path %>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<% testAPI(@search.search)    %>
+
+<% if @resultNum.to_f > 0 %> 
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Amazon New Price</th>
+      <th>Amazon Lowest Used Price</th>
+      <th>Picture</th>
+      
+    </tr>
+    <% if @titles[1].nil? || @titles[1].empty? %>
+  <tr>
+    
+      <td>
+      <a href="<%= @links[0] %>">
+      <%= @titles[0] %>
+      </a<
+      </td>
+      <td><%= @authors[0] %></td>
+      <td><%= @pricesH[0] %></td>
+      <td><%= @pricesL[0] %></td>
+      
+      <td>
+        
+          <img src="<%= @pictures[0] %>" style="width:128px;height:160px;border:0;">
+        
+      </td>
+      
+    </tr>
+  <% else %>
+  <tr>
+    
+      <td>
+      <a href="<%= @links[0] %>">
+      <%= @titles[0] %>
+      </a<
+      </td>
+      <td><%= @authors[0] %></td>
+      <td><%= @pricesH[0] %></td>
+      <td><%= @pricesL[0] %></td>
+      
+      <td>
+        
+          <img src="<%= @pictures[0] %>" style="width:128px;height:160px;border:0;">
+        
+      </td>
+      
+    </tr>
+
+  
+    <tr>
+      <td>
+      <a href="<%= @links[1] %>">
+      <%= @titles[1] %></td>
+      </a>
+      <td><%= @authors[1] %></td>
+      <td><%= @pricesH[1] %></td>
+      <td><%= @pricesL[1] %></td>
+      <td>
+        
+          <img src="<%= @pictures[1] %>" style="width:128px;height:160px;border:0;">
+      
+      </td>
+      
+    </tr>
+    <tr>
+      <td>
+      <a href="<%= @links[2] %>"><%= @titles[2] %>
+      </a>
+      </td>
+      <td><%= @authors[2] %></td>
+      <td><%= @pricesH[2] %></td>
+      <td><%= @pricesL[2] %></td>
+      <td>
+        
+          <img src="<%= @pictures[2] %>" style="width:128px;height:160px;border:0;">
+        
+      </td>
+      
+    </tr>
+    <tr>
+      <td>
+      <a href="<%= @links[3] %>">
+      <%= @titles[3] %>
+      </a>
+      </td>
+      <td><%= @authors[3] %></td>
+      <td><%= @pricesH[3] %></td>
+      <td><%= @pricesL[3] %></td>
+      <td>
+        
+          <img src="<%= @pictures[3] %>" style="width:128px;height:160px;border:0;">
+        
+      </td>
+      
+    </tr>
+    <tr>
+      <td>
+      <a href="<%= @links[4] %>">
+      <%= @titles[4] %>
+      </a>
+      </td>
+      <td><%= @authors[4] %></td>
+      <td><%= @pricesH[4] %></td>
+      <td><%= @pricesL[4] %></td>
+      <td>
+        
+          <img src="<%= @pictures[4] %>" style="width:128px;height:160px;border:0;">
+        
+      </td>
+      
+    </tr>
+  <% end %>
+  
+  </table>
+
+
+  <%= link_to 'Back', new_search_path %>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+ <%= @titles[0] %>
+ <br/>
+<%= @pricesL[0] %>
+<br/>
+<%= @pricesH[0] %>
+<br/>
+<%= @pictures[0] %>
+<br/>
+<%= @links[0] %>
+<br/>
+<%= @authors[0] %>
+<br/>
+<%= @primes[0] %>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
 
-<% testAPI(@search.search)     %>
  <%= @resultSetAPI %>
+
+<% else %>
+<h3> The search you requested returned no results. Please return to search screen and try again.</h3>
+  <%= link_to 'Back', new_search_path %>
+<% end %>
+
+
 
 
 

@@ -4,8 +4,35 @@ class SearchesController < ApplicationController
 protect_from_forgery
   attr_accessor :resultSetAPI
 
+  ###What do we want displayed? Picture, link, description, title, price, is prime. The first 5
+
+  protect_from_forgery
+  attr_accessor :pictures
+
+  protect_from_forgery
+  attr_accessor :links
+
+  protect_from_forgery
+  attr_accessor :descriptions
+
+  protect_from_forgery
+  attr_accessor :titles
+
+  protect_from_forgery
+  attr_accessor :primes
+
+  protect_from_forgery
+  attr_accessor :pricesL
+
+protect_from_forgery
+  attr_accessor :pricesH
 
 
+  protect_from_forgery
+  attr_accessor :resultNum
+
+ protect_from_forgery
+  attr_accessor :authors
 
   # GET /searches
   # GET /searches.json
