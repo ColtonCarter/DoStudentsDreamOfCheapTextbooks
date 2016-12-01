@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+
+gem 'figaro'
 gem 'httparty'
 gem 'vacuum' 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

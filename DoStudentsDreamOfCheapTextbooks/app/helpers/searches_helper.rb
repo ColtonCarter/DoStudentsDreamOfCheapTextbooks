@@ -9,25 +9,29 @@ module SearchesHelper
   require 'base64'
   require 'httparty'
 
-  # Your AWS Access Key ID, as taken from the AWS Your Account page
-  AWS_ACCESS_KEY_ID = "XXXXXXXXXXXXXXXXXXXXX"
+### set AWS_ACCESS_KEY_ID and AWS_SECRET_KEY in /config/application.yml like so... 
+#
+#AWS_ACCESS_KEY_ID: your access key
+#AWS_SECRET_KEY: your access key
+# use them by calling  ENV["AWS_ACCESS_KEY_ID"] or ENV["AWS_SECRET_KEY"]
+
+
+   # Your AWS Access Key ID, as taken from the AWS Your Account page
+  AWS_ACCESS_KEY_ID = ENV["AWS_ACCESS_KEY_ID"]
+
+  #AWS_ACCESS_KEY_ID = Figaro.env.AWS_ACCESS_KEY_ID
 
   # Your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
-  AWS_SECRET_KEY = "XXXXXXXXXXXXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXX"
+  AWS_SECRET_KEY = ENV["AWS_SECRET_KEY"]
+
+  #AWS_SECRET_KEY = Figaro.env.AWS_SECRET_KEY
 
   # The region you are interested in
   ENDPOINT = "webservices.amazon.com"
 
   REQUEST_URI = "/onca/xml"
 
-  #params = {
-  #  "Service" => "AWSECommerceService",
-  #  "Operation" => "ItemSearch",
-  #  "AWSAccessKeyId" => "XXXXXXXXXXXXXXXXXXXXX",
-  #  "AssociateTag" => "dostudentsdre-20",
-  #  "SearchIndex" => "Books",
-  #  "Keywords" => "book"
-  #}
+ 
 
   def generate_request_url(params)
   params["Timestamp"] = Time.now.gmtime.iso8601 if !params.key?("Timestamp")
@@ -229,21 +233,13 @@ end
   end
 
   def testAPI(keywords)
-#    params = {
-#  "Service" => "AWSECommerceService",
-#  "Operation" => "ItemSearch",
-#  "AWSAccessKeyId" => "XXXXXXXXXXXXXXXXXXXXX",
-#  "AssociateTag" => "dostudentsdre-20",
-#  "SearchIndex" => "All",
-#  "Keywords" => keywords,
-#  "ResponseGroup" => "Images,Offers,Small"
-#  }
+
 
 searchFor = keywords.tr('-', '')
   params = {
   "Service" => "AWSECommerceService",
   "Operation" => "ItemSearch",
-  "AWSAccessKeyId" => "XXXXXXXXXXXXXXXXXXXXX",
+  "AWSAccessKeyId" => AWS_ACCESS_KEY_ID,
   "AssociateTag" => "dostudentsdre-20",
   "SearchIndex" => "Books",
   "ResponseGroup" => "Images,ItemAttributes,Offers",
