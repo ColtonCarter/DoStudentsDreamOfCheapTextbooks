@@ -19,8 +19,8 @@
     <tr>
       <th>Title</th>
       <th>Author</th>
-      <th>Amazon New Price</th>
-      <th>Amazon Lowest Used Price</th>
+      <th>New Price</th>
+      <th>Lowest Used Price</th>
       <th>Picture</th>
       
     </tr>
@@ -30,7 +30,7 @@
       <td>
       <a href="<%= @links[0] %>">
       <%= @titles[0] %>
-      </a<
+          </a>
       </td>
       <td><%= @authors[0] %></td>
       <td><%= @pricesH[0] %></td>
@@ -49,7 +49,7 @@
       <td>
       <a href="<%= @links[0] %>">
       <%= @titles[0] %>
-      </a<
+          </a>
       </td>
       <td><%= @authors[0] %></td>
       <td><%= @pricesH[0] %></td>
@@ -132,32 +132,6 @@
 
 
   <%= link_to 'Back', new_search_path %>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
- <%= @titles[0] %>
- <br/>
-<%= @pricesL[0] %>
-<br/>
-<%= @pricesH[0] %>
-<br/>
-<%= @pictures[0] %>
-<br/>
-<%= @links[0] %>
-<br/>
-<%= @authors[0] %>
-<br/>
-<%= @primes[0] %>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
- <%= @resultSetAPI %>
-
 <% else %>
 <h3> The search you requested returned no results. Please return to search screen and try again.</h3>
   <%= link_to 'Back', new_search_path %>

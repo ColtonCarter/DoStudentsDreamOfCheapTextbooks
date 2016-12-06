@@ -10,13 +10,15 @@
       </ul>
     </div>
   <% end %>
-
+ <div class="poop">
   <div class="field">
     <%= f.label :search %>
     <%= f.text_field :search %>
   </div>
 
   <div class="action">
-    <%= f.submit  %>
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+
   </div>
+</div>
 <% end %>

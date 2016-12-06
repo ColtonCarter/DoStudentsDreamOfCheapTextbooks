@@ -5,20 +5,37 @@
     <%= csrf_meta_tags %>
 
   <div class="jumbotron">
-  <h1>Do Students Dream of Cheap Textbooks?</h1>
+  <h1>Do Students Dream of<br> Cheap Textbooks?</h1>
   <p>This is where the magic of cheap textbooks happen.  Use the search function and get started.</p>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+       <%= javascript_include_tag :application %>
+      </div>
   </head>
 
   <body>
     <%= yield %>
-            <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/application.css">
-      <title>Do Students Dream of Cheap Textbooks?</title>
+           
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Who Are We?</h3>
+      <p>We are students at Aurora University who wanted to help out others like ourselves.</p>
+    </div>
+    <div class="col-md-6">
+      <h3>Mission Statement</h3>
+      <p>You Provide the Book, We Provide the Search, You Save Money</p>
+    </div>
+    
+  </div>
 
-      </div>
+<blockquote>
+  <p>As long as I'm learning something, I figure I'm OK - it's a decent day.</p>
+  <small>Hunter S. Thompson</small>
+</blockquote>
 
+</div>
+      
 </body>
 
 <div class="footer">
@@ -26,12 +43,13 @@
 <a href ="#">About Us</a>
 <p>Do Students Dream of Cheap Textbooks © 2016</p>
 
-</div>
+
 
 </footer>
-
 </div>
-
-  
-  </body>
+<script>
+	$('.carousel').carousel({
+		interval: 3000
+	})
+</script>
 </html>
